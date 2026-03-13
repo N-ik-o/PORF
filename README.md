@@ -215,7 +215,7 @@ The tool was validated and benchmarked via comparison to other tools.
 
 ![Speed benchmarks](readme_figures/benchmark1-3.png)
 
-#### Rule-based C tool (getORF)
+#### Rule-based C tool
 
 ![Speed benchmarks](readme_figures/benchmark4.png)
 
