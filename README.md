@@ -1,10 +1,31 @@
 # PORF
 
-A fast and customizable Python-based Open Reading Frame (ORF) detection tool for nucleotide sequences in FASTA format.
+A fast and customizable Python rule-based Open Reading Frame (ORF) detection tool for nucleotide sequences in FASTA format.
 
 The program scans DNA sequences for potential protein-coding regions by identifying start codons and in-frame stop codons. It supports scanning of multiple reading frames, optional reverse strand analysis, and outputs results in FASTA and/or GFF format.
 
 This tool is designed to be lightweight, computationally efficient, and easily integrated into bioinformatics workflows.
+
+## Table of Contents
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Structure](#structure)
+- [Configuration](#configuration)
+- [Usage](#usage)
+  - [Output Format](#output-format)
+  - [FASTA Output Type](#fasta-output-type)
+  - [Strand Direction](#strand-direction)
+  - [Minimum ORF Length](#minimum-orf-length)
+  - [Start Codon Selection](#start-codon-selection)
+- [Input](#input)
+- [Output](#output)
+  - [GFF Output](#gff-output)
+  - [FASTA Output](#fasta-output)
+- [Validation and Benchmarking](#validation-and-benchmarking)
+- [Authors](#authors)
+- [License](#license)
 
 ## Features
 
@@ -48,7 +69,7 @@ biocomputing/
 ├── predicting_ORFs.py    # Main script
 └── README.md             
 ```
-## Configuration / Constants
+## Configuration
 
 The codon translation tables are defined in constants.py:
 - CODON_2_AA_FW → forward strand codon to amino acid mapping
@@ -64,15 +85,13 @@ python predicting_orfs.py [options] output_name input_file
 
 Example:
 
-python predicting_orfs.py -f both -fo aa -d both -c 50 genome_orfs genome.fasta
+python predicting_orfs.py -f both -fo aa -d both -c 50 test input_files/Xc_genome_full_5.18mb.fa
 
 This command will:
 - scan both strands
 - output FASTA and GFF files
 - translate ORFs to amino acid sequences
-- require a minimum ORF length of 50 amino acid
-
-## Command Line Options
+- require a minimum ORF length of 50 amino acids
 
 ### Output Format
 
@@ -134,8 +153,6 @@ Note: Alternative start codons are often translated as methionine.
 
 The program requires a DNA sequence in FASTA format.
 
-### Supported Format
-
 Standard FASTA format:
 
 >sequence_name
@@ -144,10 +161,9 @@ ATGCGTACGTTAGCGT...
 Requirements:
 - Sequences must contain standard nucleotide characters (A, T, G, C).
 - Input files may contain one or multiple sequences.
-- Headers beginning with `>` are preserved and used for sequence identification.
 
 Note:
-Ambiguous nucleotide symbols (e.g., N, R, Y) are currently not supported and may lead to unexpected behavior.
+Ambiguous nucleotide symbols (e.g., N, R, Y) are currently not supported.
 
 ## Output
 
@@ -202,3 +218,12 @@ The tool was validated and benchmarked via comparison to other tools.
 #### Rule-based C tool (getORF)
 
 ![Speed benchmarks](readme_figures/benchmark4.png)
+
+## Authors
+
+- Marie Sonntag (maso01-tuple)
+- Niko Stanke (N-ik-o; niko-stanke@proton.me)
+
+## License
+
+This repository is licensed under the terms of the [LICENSE](LICENSE) file.
