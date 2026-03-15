@@ -222,7 +222,7 @@ The tool was validated and benchmarked via comparison to other tools.
 ## Authors
 
 - Marie Sonntag (maso01-tuple)
-- Niko Stanke (N-ik-o; niko-stanke@proton.me)
+- Niko Stanke (N-ik-o)
 
 ## License
 
