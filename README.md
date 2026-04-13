@@ -221,7 +221,7 @@ The tool was validated and benchmarked via comparison to other tools.
 
 ## Authors
 
-- Marie Sonntag (maso01-tuple)
+- Marie Sonntag (mars-tuple)
 - Niko Stanke (N-ik-o)
 
 ## License
